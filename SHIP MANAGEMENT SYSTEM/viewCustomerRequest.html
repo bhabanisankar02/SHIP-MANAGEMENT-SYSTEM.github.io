@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ship Management System - View Customer Requests</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Ship Management System - View Customer Requests</h1>
+	</header>
+
+	<nav>
+		<button id="back-to-home">Back to Home</button>
+	</nav>
+
+	<main>
+		<h2>Customer Requests</h2>
+		<table id="customer-requests-table">
+			<thead>
+				<tr>
+					<th>Request ID</th>
+					<th>Customer Name</th>
+					<th>Shipment Details</th>
+					<th>Status</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- Customer requests will be inserted here -->
+			</tbody>
+		</table>
+	</main>
+
+	<footer>
+		<p>Copyright © 2023 Ship Management System</p>
+	</footer>
+
+    <script>document.getElementById('back-to-home').addEventListener('click', function() {
+        window.location.href = 'index.html';
+    });
+    
+    // Sample data for customer requests
+    const customerRequests = [
+        {
+            id: 1,
+            customerName: 'John Doe',
+            shipmentDetails: 'Shipment from New York to Los Angeles',
+            status: 'Pending'
+        },
+        {
+            id: 2,
+            customerName: 'Jane Smith',
+            shipmentDetails: 'Shipment from Chicago to Miami',
+            status: 'Approved'
+        },
+        {
+            id: 3,
+            customerName: 'Bob Johnson',
+            shipmentDetails: 'Shipment from Houston to Seattle',
+            status: 'Rejected'
+        }
+    ];
+    
+    // Function to display customer requests in the table
+    function displayCustomerRequests() {
+        const customerRequestsTable = document.getElementById('customer-requests-table');
+    
+        customerRequests.forEach(request => {
+            const row = customerRequestsTable.insertRow();
+    
+            const idCell = row.insertCell();
+            idCell.textContent = request.id;
+    
+            const customerNameCell = row.insertCell();
+            customerNameCell.textContent = request.customerName;
+    
+            const shipmentDetailsCell = row.insertCell();
+            shipmentDetailsCell.textContent = request.shipmentDetails;
+    
+            const statusCell = row.insertCell();
+            statusCell.textContent = request.status;
+    
+            const actionsCell = row.insertCell();
+    
+            if (request.status === 'Pending') {
+                const approveButton = document.createElement('button');
+                approveButton.textContent = 'Approve';
+                approveButton.addEventListener('click', function() {
+                    approveRequest(request.id);
+                });
+                actionsCell.appendChild(approveButton);
+    
+                const rejectButton = document.createElement('button');
+                rejectButton.textContent = 'Reject';
+                rejectButton.addEventListener('click', function() {
+                    rejectRequest(request.id);
+                });
+                actionsCell.appendChild(rejectButton);
+            } else if (request.status === 'Approved') {
+                const viewDetailsButton = document.createElement('button');
+                viewDetailsButton.textContent = 'View Details';
+                viewDetailsButton.addEventListener('click', function() {
+                    viewRequestDetails(request.id);
+                });
+                actionsCell.appendChild(viewDetailsButton);
+            }
+        });
+    }
+    
+    // Function to approve a customer request
+    function approveRequest(requestId) {
+        // Update the status of the request in the database
+        alert(`Request ${requestId} has been approved.`);
+        location.reload();
+    }
+    
+    // Function to reject a customer request
+    function rejectRequest(requestId) {
+        // Update the status of the request in the database
+        alert(`Request ${requestId} has been rejected.`);
+        location.reload();
+    }
+    
+    // Function to view the details of a customer request
+    function viewRequestDetails(requestId) {
+        // Display the details of the request in a modal or a new page
+        alert(`Request ${requestId} details have been viewed.`);
+        location.reload();
+    }
+    
+    displayCustomerRequests();</script>
+    </body>
+    </html></html>

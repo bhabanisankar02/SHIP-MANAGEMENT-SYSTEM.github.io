@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ship Management System - View Activity</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Ship Management System - View Activity</h1>
+	</header>
+
+	<nav>
+		<button id="back-to-home">Back to Home</button>
+	</nav>
+
+	<main>
+		<h2>Employee and Customer Activity</h2>
+		<table id="activity-table">
+			<thead>
+				<tr>
+					<th>Activity ID</th>
+					<th>Activity Type</th>
+					<th>User</th>
+					<th>Date/Time</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- Activity log will be inserted here -->
+			</tbody>
+		</table>
+	</main>
+
+	<footer>
+		<p>Copyright © 2023 Ship Management System</p>
+	</footer>
+
+	<script>
+		document.getElementById('back-to-home').addEventListener('click', function() {
+			window.location.href = 'index.html';
+		});
+
+		// Sample activity log data
+		const activityLog = [
+			{
+				id: 1,
+				type: 'Customer Request',
+				user: 'John Doe',
+				dateTime: '2023-03-01 10:30:00'
+			},
+			{
+				id: 2,
+				type: 'Employee Login',
+				user: 'Jane Smith',
+				dateTime: '2023-03-01 14:15:00'
+			},
+			{
+				id: 3,
+				type: 'Shipment Created',
+				user: 'Bob Johnson',
+				dateTime: '2023-03-01 16:45:00'
+			},
+			{
+				id: 4,
+				type: 'Customer Payment',
+				user: 'John Doe',
+				dateTime: '2023-03-01 18:30:00'
+			}
+		];
+
+		// Function to display the activity log in the table
+		function displayActivityLog() {
+			const activityTable = document.getElementById('activity-table');
+
+			activityLog.forEach(activity => {
+				const row = activityTable.insertRow();
+
+				const idCell = row.insertCell();
+				idCell.textContent = activity.id;
+
+				const typeCell = row.insertCell();
+				typeCell.textContent = activity.type;
+
+				const userCell = row.insertCell();
+				userCell.textContent = activity.user;
+
+				const dateTimeCell = row.insertCell();
+				dateTimeCell.textContent = activity.dateTime;
+			});
+		}
+
+		displayActivityLog();
+	</script>
+</body>
+</html>

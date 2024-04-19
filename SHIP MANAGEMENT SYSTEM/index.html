@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ship Management System</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <header>
+        <img src="assets\shipManagement.jpg" alt="Ship">
+      <h1>Ship Management System</h1>
+    </header>
+
+    <nav>
+      <button id="customer">Customer</button>
+      <button id="register">Register</button>
+      <button id="employee">Employee</button>
+      <button id="manager">Manager</button>
+      <button id="logout">Logout</button>
+    </nav>
+
+    <main>
+      <section id="customer-section">
+        <h2>Customer Dashboard</h2>
+            <p>
+                Welcome to the customer dashboard! Here, you can view your current
+                shipments, request a new shipment, and view your payment history.
+            </p>
+            <p>
+                To view your current shipments, click on the "View Shipments" button below. You will be able to see the status of each shipment, as well as any associated tracking information.
+            </p>
+            <p>
+                If you would like to request a new shipment, click on the "Request Shipment" button. You will be prompted to enter the details of your shipment, including the pickup location, delivery location, and any special instructions.
+            </p>
+            <p>
+                To view your payment history, click on the "View Payment History" button. You will be able to see a list of all your past payments, including the date, amount, and shipment details.
+            </p>
+        <button id="request-shipment">Request Shipment</button>
+        <button id="view-payment-history">View Payment History</button>
+      </section>
+
+      <section id="register-section" style="display: none">
+        <h2>Register</h2>
+        <form>
+          <label for="first-name">First Name:</label>
+          <input type="text" id="first-name" required />
+
+          <label for="last-name">Last Name:</label>
+          <input type="text" id="last-name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" required />
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" required />
+
+          <button type="submit">Register</button>
+        </form>
+      </section>
+
+      <section id="employee-section" style="display: none">
+        <h2>Employee Dashboard</h2>
+        <p>
+          Welcome to the employee dashboard! Here, you can view customer
+          requests, approve or deny shipments, and view payment history.
+        </p>
+        <button id="view-requests">View Customer Requests</button>
+        <button id="view-payment-history">View Payment History</button>
+      </section>
+
+      <section id="manager-section" style="display: none">
+        <h2>Manager Dashboard</h2>
+        <p>
+          Welcome to the manager dashboard! Here, you can view all employee and
+          customer activity, approve or deny employee requests, and generate
+          reports.
+        </p>
+        <button id="view-activity">View Employee and Customer Activity</button>
+        <button id="approve-employee-request">Approve Employee Request</button>
+        <button id="generate-report">Generate Report</button>
+      </section>
+    </main>
+
+    <footer>
+      <p>Copyright © 2023 Ship Management System</p>
+    </footer>
+
+    <script>
+      document
+        .getElementById("customer")
+        .addEventListener("click", function () {
+          window.location.href = "customer.html";
+        });
+
+      document
+        .getElementById("register")
+        .addEventListener("click", function () {
+          window.location.href = "registration.html";
+        });
+
+      document
+        .getElementById("employee")
+        .addEventListener("click", function () {
+          window.location.href = "employee.html";
+        });
+
+      document.getElementById("manager").addEventListener("click", function () {
+        window.location.href = "manager.html";
+      });
+
+      document.getElementById("logout").addEventListener("click", function () {
+        window.location.href = "logout.html";
+      });
+
+      document
+        .getElementById("request-shipment")
+        .addEventListener("click", function () {
+          window.location.href = "requestShipment.html";
+        });
+
+      document
+        .getElementById("view-payment-history")
+        .addEventListener("click", function () {
+          window.location.href = "viewPaymentHistory.html";
+        });
+    </script>
+  </body>
+</html>

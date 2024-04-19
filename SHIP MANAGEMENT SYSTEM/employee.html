@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ship Management System - Employee</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Ship Management System - Employee</h1>
+	</header>
+
+	<nav>
+		<button id="back-to-home">Back to Home</button>
+	</nav>
+
+	<main>
+		<h2>Employee Dashboard</h2>
+		<p>Welcome to the employee dashboard! Here, you can view customer requests, approve or deny shipments, and view payment history.</p>
+		<button id="view-customer-requests">View Customer Requests</button>
+		<button id="view-payment-history">View Payment History</button>
+	</main>
+
+	<footer>
+		<p>Copyright © 2023 Ship Management System</p>
+	</footer>
+
+	<script>
+		document.getElementById('back-to-home').addEventListener('click', function() {
+			window.location.href = 'index.html';
+		});
+
+        document.getElementById('view-customer-requests').addEventListener('click', function() {
+			window.location.href = 'viewCustomerRequest.html';
+		});
+
+        document.getElementById('view-payment-history').addEventListener('click', function() {
+			window.location.href = 'viewPaymentHistory.html';
+		});
+
+      
+	</script>
+</body>
+</html>
