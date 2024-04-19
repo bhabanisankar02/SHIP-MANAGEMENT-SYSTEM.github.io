@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ship Management System - Customer</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Ship Management System - Customer</h1>
+	</header>
+
+	<nav>
+		<button id="back-to-home">Back to Home</button>
+	</nav>
+
+	<main>
+		<h2>My Shipments</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Shipment ID</th>
+					<th>Shipment Date</th>
+					<th>Status</th>
+					<th>Total Cost</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>12345</td>
+					<td>2023-03-22</td>
+					<td>Delivered</td>
+					<td>$100.00</td>
+				</tr>
+				<tr>
+					<td>67890</td>
+					<td>2023-03-21</td>
+					<td>In Transit</td>
+					<td>$50.00</td>
+				</tr>
+			</tbody>
+		</table>
+		<button id="request-shipment">Request New Shipment</button>
+		<button id="view-payment-history">View Payment History</button>
+	</main>
+
+	<footer>
+		<p>Copyright © 2023 Ship Management System</p>
+	</footer>
+
+	<script>
+		document.getElementById('back-to-home').addEventListener('click', function() {
+			window.location.href = 'index.html';
+        })
+
+        document.getElementById('request-shipment').addEventListener('click', function() {
+			window.location.href = 'requestShipment.html';
+		});
+
+        document.getElementById('view-payment-history').addEventListener('click', function() {
+			window.location.href = 'viewPaymentHistory.html';
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ship Management System - Generate Report</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Ship Management System - Generate Report</h1>
+	</header>
+
+	<nav>
+		<button id="back-to-home">Back to Home</button>
+	</nav>
+
+	<main>
+		<h2>Generate Report</h2>
+		<p>Please select the type of report you would like to generate:</p>
+
+		<form id="report-form">
+			<label for="report-type">Report Type:</label>
+			<select id="report-type">
+				<option value="sales">Sales Report</option>
+				<option value="inventory">Inventory Report</option>
+				<option value="shipping">Shipping Report</option>
+			</select>
+
+			<label for="start-date">Start Date:</label>
+			<input type="date" id="start-date">
+
+			<label for="end-date">End Date:</label>
+			<input type="date" id="end-date">
+
+			<button type="submit">Generate Report</button>
+		</form>
+
+		<h2>Generated Reports</h2>
+		<ul id="report-list"></ul>
+	</main>
+
+	<footer>
+		<p>Copyright © 2023 Ship Management System</p>
+	</footer>
+
+	<script>
+		document.getElementById('back-to-home').addEventListener('click', function() {
+			window.location.href = 'index.html';
+		});
+
+		document.getElementById('report-form').addEventListener('submit', function(event) {
+			event.preventDefault();
+
+			// Generate the report
+			const reportType = document.getElementById('report-type').value;
+			const startDate = document.getElementById('start-date').value;
+			const endDate = document.getElementById('end-date').value;
+
+			// Simulate report generation with a timeout
+			setTimeout(function() {
+				// Add the report to the list
+				const reportList = document.getElementById('report-list');
+				const reportItem = document.createElement('li');
+				reportItem.textContent = `Generated ${reportType} report from ${startDate} to ${endDate}`;
+				reportList.appendChild(reportItem);
+			}, 2000);
+		});
+	</script>
+</body>
+</html>
